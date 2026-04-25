@@ -1,0 +1,177 @@
+{
+  "info": {
+    "_postman_id": "auditor-collection-v2",
+    "name": "Expensify Financial Auditor API - Complete",
+    "description": "Complete API collection for testing the Advanced Financial Auditor with unified workflow",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "UNIFIED WORKFLOW",
+      "item": [
+        {
+          "name": "Complete Audit (File Upload)",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "file",
+                  "type": "file",
+                  "src": "data/samples/test_expenses.csv"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://localhost:8000/api/full-audit",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8000",
+              "path": ["api", "full-audit"]
+            },
+            "description": "SINGLE ENDPOINT - Complete workflow:\n1. Upload CSV file\n2. Prepare & clean data\n3. Extract features & violations\n4. Run audit analysis\n5. Generate comprehensive report\n\nReturns: {status, message, report: {processing, audit_analysis, executive_summary}}"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "DATA PREPARATION",
+      "item": [
+        {
+          "name": "Prepare Data",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "file",
+                  "type": "file",
+                  "src": "data/samples/test_expenses.csv"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://localhost:8000/api/prepare",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8000",
+              "path": ["api", "prepare"]
+            },
+            "description": "Upload CSV for data preparation and cleaning"
+          },
+          "response": []
+        },
+        {
+          "name": "Export Prepared Data",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{}"
+            },
+            "url": {
+              "raw": "http://localhost:8000/api/export-prepared-data",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8000",
+              "path": ["api", "export-prepared-data"]
+            },
+            "description": "Export prepared data as CSV"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "AUDIT ANALYSIS",
+      "item": [
+        {
+          "name": "Analyze Expenses (Full Report)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"summary_statistics\": {\n    \"total_expense\": 250000,\n    \"category_breakdown\": {\"Travel\": 85000, \"Meals\": 45000, \"Software\": 50000, \"Office\": 40000, \"Other\": 30000},\n    \"department_distribution\": {\"Sales\": 95000, \"Engineering\": 65000, \"Marketing\": 50000, \"HR\": 25000, \"Operations\": 15000}\n  },\n  \"enriched_features\": [\n    {\"date\": \"2024-01-01\", \"employee\": \"John Smith\", \"amount\": 3200, \"category\": \"Travel\", \"vendor\": \"United\", \"spending_level\": \"High\", \"is_high_value\": true}\n  ],\n  \"policy_violations\": [\n    {\"employee\": \"John Smith\", \"amount\": 5500, \"violation_type\": \"budget_exceeded\", \"description\": \"Expense exceeds $5000 limit\"}\n  ],\n  \"flagged_transactions\": {\n    \"high_value_transactions\": [{\"employee\": \"Jane Doe\", \"amount\": 4500, \"reason\": \"High-value transaction\"}],\n    \"potential_duplicates\": [],\n    \"risk_transactions\": []\n  },\n  \"transactions\": [\n    {\"date\": \"2024-01-01\", \"employee\": \"John Smith\", \"amount\": 1200},\n    {\"date\": \"2024-01-02\", \"employee\": \"Jane Doe\", \"amount\": 3500}\n  ]\n}\n"
+            },
+            "url": {
+              "raw": "http://localhost:8000/api/analyze",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8000",
+              "path": ["api", "analyze"]
+            },
+            "description": "Analyze expense data and return comprehensive audit report with risk assessment, violations, fraud signals, and recommendations"
+          },
+          "response": []
+        },
+        {
+          "name": "Analyze - High Risk Scenario",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"summary_statistics\": {\n    \"total_expense\": 50000,\n    \"category_breakdown\": {\"Travel\": 30000, \"Meals\": 10000, \"Software\": 10000},\n    \"department_distribution\": {\"Sales\": 35000, \"Marketing\": 15000}\n  },\n  \"enriched_features\": [\n    {\"date\": \"2024-01-01\", \"employee\": \"Mike Johnson\", \"amount\": 8000, \"category\": \"Travel\", \"spending_level\": \"High\", \"is_high_value\": true},\n    {\"date\": \"2024-01-02\", \"employee\": \"Mike Johnson\", \"amount\": 7500, \"category\": \"Travel\", \"spending_level\": \"High\", \"is_high_value\": true},\n    {\"date\": \"2024-01-03\", \"employee\": \"Mike Johnson\", \"amount\": 6200, \"category\": \"Software\", \"spending_level\": \"High\", \"is_high_value\": true}\n  ],\n  \"policy_violations\": [\n    {\"employee\": \"Mike Johnson\", \"amount\": 8000, \"violation_type\": \"budget_exceeded\"},\n    {\"employee\": \"Mike Johnson\", \"amount\": 7500, \"violation_type\": \"budget_exceeded\"},\n    {\"employee\": \"Mike Johnson\", \"amount\": 6200, \"violation_type\": \"frequency_violation\"}\n  ],\n  \"flagged_transactions\": {\n    \"high_value_transactions\": [{\"employee\": \"Mike Johnson\", \"amount\": 8000}, {\"employee\": \"Mike Johnson\", \"amount\": 7500}, {\"employee\": \"Mike Johnson\", \"amount\": 6200}],\n    \"potential_duplicates\": [],\n    \"risk_transactions\": [{\"employee\": \"Mike Johnson\", \"amount\": 8000, \"risk_score\": 0.9}]\n  },\n  \"transactions\": [\n    {\"date\": \"2024-01-01\", \"employee\": \"Mike Johnson\", \"amount\": 8000},\n    {\"date\": \"2024-01-02\", \"employee\": \"Mike Johnson\", \"amount\": 7500},\n    {\"date\": \"2024-01-03\", \"employee\": \"Mike Johnson\", \"amount\": 6200}\n  ]\n}\n"
+            },
+            "url": {
+              "raw": "http://localhost:8000/api/analyze",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8000",
+              "path": ["api", "analyze"]
+            },
+            "description": "High-risk scenario: Multiple high-value expenses from same employee with repeated violations"
+          },
+          "response": []
+        },
+        {
+          "name": "Analyze - Low Risk Scenario",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"summary_statistics\": {\n    \"total_expense\": 5000,\n    \"category_breakdown\": {\"Meals\": 2000, \"Office\": 3000},\n    \"department_distribution\": {\"HR\": 5000}\n  },\n  \"enriched_features\": [\n    {\"date\": \"2024-01-01\", \"employee\": \"Sarah Wilson\", \"amount\": 800, \"category\": \"Meals\", \"spending_level\": \"Medium\", \"is_high_value\": false},\n    {\"date\": \"2024-01-02\", \"employee\": \"Sarah Wilson\", \"amount\": 1200, \"category\": \"Office\", \"spending_level\": \"Medium\", \"is_high_value\": false},\n    {\"date\": \"2024-01-03\", \"employee\": \"Sarah Wilson\", \"amount\": 3000, \"category\": \"Office\", \"spending_level\": \"Medium\", \"is_high_value\": false}\n  ],\n  \"policy_violations\": [],\n  \"flagged_transactions\": {\n    \"high_value_transactions\": [],\n    \"potential_duplicates\": [],\n    \"risk_transactions\": []\n  },\n  \"transactions\": [\n    {\"date\": \"2024-01-01\", \"employee\": \"Sarah Wilson\", \"amount\": 800},\n    {\"date\": \"2024-01-02\", \"employee\": \"Sarah Wilson\", \"amount\": 1200},\n    {\"date\": \"2024-01-03\", \"employee\": \"Sarah Wilson\", \"amount\": 3000}\n  ]\n}\n"
+            },
+            "url": {
+              "raw": "http://localhost:8000/api/analyze",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8000",
+              "path": ["api", "analyze"]
+            },
+            "description": "Low-risk scenario: Clean expenses with no violations, no fraud signals"
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}

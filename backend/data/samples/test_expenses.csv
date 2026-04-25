@@ -1,0 +1,21 @@
+date,employee,amount,category,vendor,description,department,employee_level
+2024-01-05,John Smith,1200.00,Travel,United Airlines,Flight to NYC,Sales,Manager
+2024-01-06,Jane Doe,3500.00,Travel,Marriott Hotels,Hotel stay 5 nights,Engineering,Senior
+2024-01-07,John Smith,450.00,Meals,Restaurant X,Client dinner,Sales,Manager
+2024-01-08,Mike Johnson,5200.00,Software,Adobe Inc,Software license renewal,Marketing,Manager
+2024-01-09,Sarah Wilson,2200.00,Travel,United Airlines,Flight to LA,Sales,Senior
+2024-01-10,Tom Brown,800.00,Meals,Restaurant Y,Team lunch,Operations,Junior
+2024-01-11,John Smith,3200.00,Travel,Marriott Hotels,Hotel stay 4 nights,Sales,Manager
+2024-01-12,Jane Doe,450.00,Office Supplies,Office Depot,Office supplies,Engineering,Senior
+2024-01-13,Mike Johnson,2800.00,Travel,Hilton Hotels,Hotel stay 3 nights,Marketing,Manager
+2024-01-14,Sarah Wilson,1500.00,Meals,Restaurant Z,Client entertainment,Sales,Senior
+2024-01-15,Tom Brown,1800.00,Travel,Budget Hotels,Hotel stay 2 nights,Operations,Junior
+2024-01-16,John Smith,600.00,Meals,Restaurant X,Client dinner,Sales,Manager
+2024-01-17,Jane Doe,3800.00,Travel,United Airlines,Flight and hotel package,Engineering,Senior
+2024-01-18,Mike Johnson,950.00,Software,Salesforce,Monthly subscription,Marketing,Manager
+2024-01-19,Sarah Wilson,2100.00,Travel,United Airlines,Flight to Chicago,Sales,Senior
+2024-01-20,Tom Brown,550.00,Meals,Cafe,Team lunch,Operations,Junior
+2024-01-21,John Smith,1100.00,Travel,United Airlines,Flight to Boston,Sales,Manager
+2024-01-22,Jane Doe,2900.00,Travel,Marriott Hotels,Hotel stay,Engineering,Senior
+2024-01-23,Mike Johnson,1200.00,Office Supplies,Staples,Office materials,Marketing,Manager
+2024-01-24,Sarah Wilson,,Travel,United Airlines,Flight booking,Sales,Senior

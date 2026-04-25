@@ -1,0 +1,119 @@
+{
+  "info": {
+    "_postman_id": "auditor-collection",
+    "name": "Expensify Financial Auditor API",
+    "description": "Complete API collection for testing the Advanced Financial Auditor",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Audit Analysis",
+      "item": [
+        {
+          "name": "Analyze Expenses (Full Report)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"summary_statistics\": {\n    \"total_expense\": 250000.00,\n    \"category_breakdown\": {\n      \"Travel\": 85000,\n      \"Meals & Entertainment\": 45000,\n      \"Software\": 65000,\n      \"Office Supplies\": 28000,\n      \"Miscellaneous\": 27000\n    },\n    \"department_distribution\": {\n      \"Sales\": 95000,\n      \"Engineering\": 85000,\n      \"Marketing\": 45000,\n      \"Operations\": 25000\n    },\n    \"employee_level_distribution\": {\n      \"Manager\": 120000,\n      \"Senior\": 85000,\n      \"Junior\": 45000\n    },\n    \"spending_level_distribution\": {\n      \"Low\": 120000,\n      \"Medium\": 80000,\n      \"High\": 50000\n    }\n  },\n  \"enriched_features\": [\n    {\n      \"date\": \"2024-01-05\",\n      \"employee\": \"John Smith\",\n      \"amount\": 1200.00,\n      \"category\": \"Travel\",\n      \"vendor\": \"United Airlines\",\n      \"description\": \"Flight to NYC\",\n      \"spending_level\": \"Medium\",\n      \"is_high_value\": false,\n      \"risk_flag\": false,\n      \"inferred_department\": \"Sales\",\n      \"employee_level\": \"Manager\",\n      \"behavioral_tags\": [\"frequent_traveler\"]\n    },\n    {\n      \"date\": \"2024-01-06\",\n      \"employee\": \"Jane Doe\",\n      \"amount\": 3500.00,\n      \"category\": \"Travel\",\n      \"vendor\": \"Marriott Hotels\",\n      \"description\": \"Hotel stay - 5 nights\",\n      \"spending_level\": \"High\",\n      \"is_high_value\": true,\n      \"risk_flag\": true,\n      \"inferred_department\": \"Engineering\",\n      \"employee_level\": \"Senior\",\n      \"behavioral_tags\": [\"rare_high_spend\"]\n    },\n    {\n      \"date\": \"2024-01-07\",\n      \"employee\": \"John Smith\",\n      \"amount\": 450.00,\n      \"category\": \"Meals & Entertainment\",\n      \"vendor\": \"Restaurant X\",\n      \"description\": \"Client dinner\",\n      \"spending_level\": \"Medium\",\n      \"is_high_value\": false,\n      \"risk_flag\": false,\n      \"inferred_department\": \"Sales\",\n      \"employee_level\": \"Manager\",\n      \"behavioral_tags\": [\"business_meal\"]\n    },\n    {\n      \"date\": \"2024-01-08\",\n      \"employee\": \"Mike Johnson\",\n      \"amount\": 5000.00,\n      \"category\": \"Software\",\n      \"vendor\": \"Adobe Inc\",\n      \"description\": \"Software license renewal\",\n      \"spending_level\": \"High\",\n      \"is_high_value\": true,\n      \"risk_flag\": false,\n      \"inferred_department\": \"Marketing\",\n      \"employee_level\": \"Manager\",\n      \"behavioral_tags\": [\"legitimate_purchase\"]\n    },\n    {\n      \"date\": \"2024-01-09\",\n      \"employee\": \"Sarah Wilson\",\n      \"amount\": 2200.00,\n      \"category\": \"Travel\",\n      \"vendor\": \"United Airlines\",\n      \"description\": \"Flight to LA\",\n      \"spending_level\": \"High\",\n      \"is_high_value\": true,\n      \"risk_flag\": true,\n      \"inferred_department\": \"Sales\",\n      \"employee_level\": \"Senior\",\n      \"behavioral_tags\": [\"high_travel_frequency\"]\n    },\n    {\n      \"date\": \"2024-01-10\",\n      \"employee\": \"Tom Brown\",\n      \"amount\": 800.00,\n      \"category\": \"Meals & Entertainment\",\n      \"vendor\": \"Restaurant Y\",\n      \"description\": \"Team lunch\",\n      \"spending_level\": \"Low\",\n      \"is_high_value\": false,\n      \"risk_flag\": false,\n      \"inferred_department\": \"Operations\",\n      \"employee_level\": \"Junior\",\n      \"behavioral_tags\": [\"team_event\"]\n    },\n    {\n      \"date\": \"2024-01-11\",\n      \"employee\": \"John Smith\",\n      \"amount\": 3200.00,\n      \"category\": \"Travel\",\n      \"vendor\": \"Marriott Hotels\",\n      \"description\": \"Hotel stay - 4 nights\",\n      \"spending_level\": \"High\",\n      \"is_high_value\": true,\n      \"risk_flag\": false,\n      \"inferred_department\": \"Sales\",\n      \"employee_level\": \"Manager\",\n      \"behavioral_tags\": [\"business_travel\"]\n    },\n    {\n      \"date\": \"2024-01-12\",\n      \"employee\": \"Jane Doe\",\n      \"amount\": 450.00,\n      \"category\": \"Office Supplies\",\n      \"vendor\": \"Office Depot\",\n      \"description\": \"Office supplies\",\n      \"spending_level\": \"Low\",\n      \"is_high_value\": false,\n      \"risk_flag\": false,\n      \"inferred_department\": \"Engineering\",\n      \"employee_level\": \"Senior\",\n      \"behavioral_tags\": []\n    },\n    {\n      \"date\": \"2024-01-13\",\n      \"employee\": \"Mike Johnson\",\n      \"amount\": 2800.00,\n      \"category\": \"Travel\",\n      \"vendor\": \"Hilton Hotels\",\n      \"description\": \"Hotel stay - 3 nights\",\n      \"spending_level\": \"High\",\n      \"is_high_value\": true,\n      \"risk_flag\": true,\n      \"inferred_department\": \"Marketing\",\n      \"employee_level\": \"Manager\",\n      \"behavioral_tags\": [\"conference_travel\"]\n    },\n    {\n      \"date\": \"2024-01-14\",\n      \"employee\": \"Sarah Wilson\",\n      \"amount\": 1500.00,\n      \"category\": \"Meals & Entertainment\",\n      \"vendor\": \"Restaurant Z\",\n      \"description\": \"Client entertainment\",\n      \"spending_level\": \"Medium\",\n      \"is_high_value\": false,\n      \"risk_flag\": false,\n      \"inferred_department\": \"Sales\",\n      \"employee_level\": \"Senior\",\n      \"behavioral_tags\": [\"client_event\"]\n    },\n    {\n      \"date\": \"2024-01-15\",\n      \"employee\": \"Tom Brown\",\n      \"amount\": 1800.00,\n      \"category\": \"Travel\",\n      \"vendor\": \"Budget Hotels\",\n      \"description\": \"Hotel stay - 2 nights\",\n      \"spending_level\": \"Medium\",\n      \"is_high_value\": false,\n      \"risk_flag\": false,\n      \"inferred_department\": \"Operations\",\n      \"employee_level\": \"Junior\",\n      \"behavioral_tags\": []\n    },\n    {\n      \"date\": \"2024-01-16\",\n      \"employee\": \"John Smith\",\n      \"amount\": 600.00,\n      \"category\": \"Meals & Entertainment\",\n      \"vendor\": \"Restaurant X\",\n      \"description\": \"Client dinner\",\n      \"spending_level\": \"Medium\",\n      \"is_high_value\": false,\n      \"risk_flag\": false,\n      \"inferred_department\": \"Sales\",\n      \"employee_level\": \"Manager\",\n      \"behavioral_tags\": [\"business_meal\"]\n    },\n    {\n      \"date\": \"2024-01-17\",\n      \"employee\": \"Jane Doe\",\n      \"amount\": 3800.00,\n      \"category\": \"Travel\",\n      \"vendor\": \"United Airlines\",\n      \"description\": \"Flight + Hotel package\",\n      \"spending_level\": \"High\",\n      \"is_high_value\": true,\n      \"risk_flag\": true,\n      \"inferred_department\": \"Engineering\",\n      \"employee_level\": \"Senior\",\n      \"behavioral_tags\": [\"high_spend_pattern\"]\n    },\n    {\n      \"date\": \"2024-01-18\",\n      \"employee\": \"Mike Johnson\",\n      \"amount\": 950.00,\n      \"category\": \"Software\",\n      \"vendor\": \"Salesforce\",\n      \"description\": \"Monthly subscription\",\n      \"spending_level\": \"Medium\",\n      \"is_high_value\": false,\n      \"risk_flag\": false,\n      \"inferred_department\": \"Marketing\",\n      \"employee_level\": \"Manager\",\n      \"behavioral_tags\": []\n    },\n    {\n      \"date\": \"2024-01-19\",\n      \"employee\": \"Sarah Wilson\",\n      \"amount\": 2100.00,\n      \"category\": \"Travel\",\n      \"vendor\": \"United Airlines\",\n      \"description\": \"Flight to Chicago\",\n      \"spending_level\": \"High\",\n      \"is_high_value\": true,\n      \"risk_flag\": true,\n      \"inferred_department\": \"Sales\",\n      \"employee_level\": \"Senior\",\n      \"behavioral_tags\": [\"frequent_flyer\"]\n    }\n  ],\n  \"policy_violations\": [\n    {\n      \"employee\": \"Jane Doe\",\n      \"amount\": 3500.00,\n      \"category\": \"Travel\",\n      \"date\": \"2024-01-06\",\n      \"violation_type\": \"budget_exceeded\",\n      \"description\": \"Hotel expense exceeds approved per-diem by 40%\"\n    },\n    {\n      \"employee\": \"Mike Johnson\",\n      \"amount\": 2800.00,\n      \"category\": \"Travel\",\n      \"date\": \"2024-01-13\",\n      \"violation_type\": \"high_value_alert\",\n      \"description\": \"High-value transaction requires additional approval\"\n    },\n    {\n      \"employee\": \"Sarah Wilson\",\n      \"amount\": 2200.00,\n      \"category\": \"Travel\",\n      \"date\": \"2024-01-09\",\n      \"violation_type\": \"frequency_violation\",\n      \"description\": \"Excessive travel frequency - 5 trips in 30 days\"\n    },\n    {\n      \"employee\": \"John Smith\",\n      \"amount\": 1200.00,\n      \"category\": \"Travel\",\n      \"date\": \"2024-01-05\",\n      \"violation_type\": \"missing_documentation\",\n      \"description\": \"Missing business purpose documentation\"\n    },\n    {\n      \"employee\": \"Jane Doe\",\n      \"amount\": 3800.00,\n      \"category\": \"Travel\",\n      \"date\": \"2024-01-17\",\n      \"violation_type\": \"budget_exceeded\",\n      \"description\": \"Travel package exceeds quarterly limit\"\n    },\n    {\n      \"employee\": \"Sarah Wilson\",\n      \"amount\": 2100.00,\n      \"category\": \"Travel\",\n      \"date\": \"2024-01-19\",\n      \"violation_type\": \"frequency_violation\",\n      \"description\": \"Excessive travel frequency - 6 trips in 30 days\"\n    }\n  ],\n  \"flagged_transactions\": {\n    \"high_value_transactions\": [\n      {\n        \"date\": \"2024-01-06\",\n        \"employee\": \"Jane Doe\",\n        \"amount\": 3500.00,\n        \"category\": \"Travel\",\n        \"reason\": \"Exceeds high-value threshold\"\n      },\n      {\n        \"date\": \"2024-01-08\",\n        \"employee\": \"Mike Johnson\",\n        \"amount\": 5000.00,\n        \"category\": \"Software\",\n        \"reason\": \"High-value legitimate purchase\"\n      },\n      {\n        \"date\": \"2024-01-09\",\n        \"employee\": \"Sarah Wilson\",\n        \"amount\": 2200.00,\n        \"category\": \"Travel\",\n        \"reason\": \"High-value transaction\"\n      },\n      {\n        \"date\": \"2024-01-13\",\n        \"employee\": \"Mike Johnson\",\n        \"amount\": 2800.00,\n        \"category\": \"Travel\",\n        \"reason\": \"High-value transaction\"\n      },\n      {\n        \"date\": \"2024-01-17\",\n        \"employee\": \"Jane Doe\",\n        \"amount\": 3800.00,\n        \"category\": \"Travel\",\n        \"reason\": \"High-value transaction\"\n      },\n      {\n        \"date\": \"2024-01-19\",\n        \"employee\": \"Sarah Wilson\",\n        \"amount\": 2100.00,\n        \"category\": \"Travel\",\n        \"reason\": \"High-value transaction\"\n      }\n    ],\n    \"potential_duplicates\": [\n      {\n        \"transaction_pair\": [\"Jane Doe - Hotel 01/06 - $3500\", \"Jane Doe - Travel 01/17 - $3800\"],\n        \"similarity_score\": 0.85,\n        \"reason\": \"Same employee, similar dates, similar amounts, similar vendors\"\n      }\n    ],\n    \"risk_transactions\": [\n      {\n        \"date\": \"2024-01-06\",\n        \"employee\": \"Jane Doe\",\n        \"amount\": 3500.00,\n        \"risk_score\": 0.82,\n        \"reason\": \"High-value + violation combination\"\n      },\n      {\n        \"date\": \"2024-01-09\",\n        \"employee\": \"Sarah Wilson\",\n        \"amount\": 2200.00,\n        \"risk_score\": 0.78,\n        \"reason\": \"Frequent traveler with high spending\"\n      },\n      {\n        \"date\": \"2024-01-17\",\n        \"employee\": \"Jane Doe\",\n        \"amount\": 3800.00,\n        \"risk_score\": 0.75,\n        \"reason\": \"Repeat high-value violator\"\n      }\n    ]\n  },\n  \"transactions\": [\n    {\"date\": \"2024-01-05\", \"amount\": 1200.00, \"employee\": \"John Smith\"},\n    {\"date\": \"2024-01-06\", \"amount\": 3500.00, \"employee\": \"Jane Doe\"},\n    {\"date\": \"2024-01-07\", \"amount\": 450.00, \"employee\": \"John Smith\"},\n    {\"date\": \"2024-01-08\", \"amount\": 5000.00, \"employee\": \"Mike Johnson\"},\n    {\"date\": \"2024-01-09\", \"amount\": 2200.00, \"employee\": \"Sarah Wilson\"},\n    {\"date\": \"2024-01-10\", \"amount\": 800.00, \"employee\": \"Tom Brown\"},\n    {\"date\": \"2024-01-11\", \"amount\": 3200.00, \"employee\": \"John Smith\"},\n    {\"date\": \"2024-01-12\", \"amount\": 450.00, \"employee\": \"Jane Doe\"},\n    {\"date\": \"2024-01-13\", \"amount\": 2800.00, \"employee\": \"Mike Johnson\"},\n    {\"date\": \"2024-01-14\", \"amount\": 1500.00, \"employee\": \"Sarah Wilson\"},\n    {\"date\": \"2024-01-15\", \"amount\": 1800.00, \"employee\": \"Tom Brown\"},\n    {\"date\": \"2024-01-16\", \"amount\": 600.00, \"employee\": \"John Smith\"},\n    {\"date\": \"2024-01-17\", \"amount\": 3800.00, \"employee\": \"Jane Doe\"},\n    {\"date\": \"2024-01-18\", \"amount\": 950.00, \"employee\": \"Mike Johnson\"},\n    {\"date\": \"2024-01-19\", \"amount\": 2100.00, \"employee\": \"Sarah Wilson\"}\n  ]\n}\n"
+            },
+            "url": {
+              "raw": "http://localhost:8000/api/analyze",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8000",
+              "path": ["api", "analyze"]
+            },
+            "description": "Send expense data for comprehensive audit analysis. Returns risk assessment, violations, anomalies, fraud signals, insights, recommendations, and visualization data."
+          },
+          "response": []
+        },
+        {
+          "name": "Analyze - High Risk Scenario",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"summary_statistics\": {\n    \"total_expense\": 100000.00,\n    \"category_breakdown\": {\n      \"Travel\": 70000,\n      \"Meals\": 20000,\n      \"Software\": 10000\n    },\n    \"department_distribution\": {\n      \"Sales\": 60000,\n      \"Marketing\": 40000\n    },\n    \"employee_level_distribution\": {\n      \"Manager\": 70000,\n      \"Senior\": 30000\n    },\n    \"spending_level_distribution\": {\n      \"High\": 60000,\n      \"Medium\": 40000\n    }\n  },\n  \"enriched_features\": [\n    {\n      \"date\": \"2024-01-01\",\n      \"employee\": \"Employee A\",\n      \"amount\": 8000.00,\n      \"category\": \"Travel\",\n      \"vendor\": \"Airline X\",\n      \"description\": \"Trip 1\",\n      \"spending_level\": \"High\",\n      \"is_high_value\": true,\n      \"risk_flag\": true,\n      \"inferred_department\": \"Sales\",\n      \"employee_level\": \"Manager\",\n      \"behavioral_tags\": []\n    },\n    {\n      \"date\": \"2024-01-02\",\n      \"employee\": \"Employee A\",\n      \"amount\": 9000.00,\n      \"category\": \"Travel\",\n      \"vendor\": \"Airline X\",\n      \"description\": \"Trip 2\",\n      \"spending_level\": \"High\",\n      \"is_high_value\": true,\n      \"risk_flag\": true,\n      \"inferred_department\": \"Sales\",\n      \"employee_level\": \"Manager\",\n      \"behavioral_tags\": []\n    },\n    {\n      \"date\": \"2024-01-03\",\n      \"employee\": \"Employee A\",\n      \"amount\": 7500.00,\n      \"category\": \"Travel\",\n      \"vendor\": \"Airline X\",\n      \"description\": \"Trip 3\",\n      \"spending_level\": \"High\",\n      \"is_high_value\": true,\n      \"risk_flag\": true,\n      \"inferred_department\": \"Sales\",\n      \"employee_level\": \"Manager\",\n      \"behavioral_tags\": []\n    },\n    {\n      \"date\": \"2024-01-04\",\n      \"employee\": \"Employee B\",\n      \"amount\": 5000.00,\n      \"category\": \"Software\",\n      \"vendor\": \"Vendor Y\",\n      \"description\": \"License\",\n      \"spending_level\": \"High\",\n      \"is_high_value\": true,\n      \"risk_flag\": false,\n      \"inferred_department\": \"Marketing\",\n      \"employee_level\": \"Senior\",\n      \"behavioral_tags\": []\n    },\n    {\n      \"date\": \"2024-01-05\",\n      \"employee\": \"Employee C\",\n      \"amount\": 3500.00,\n      \"category\": \"Meals\",\n      \"vendor\": \"Restaurant\",\n      \"description\": \"Dinner\",\n      \"spending_level\": \"Medium\",\n      \"is_high_value\": false,\n      \"risk_flag\": false,\n      \"inferred_department\": \"Sales\",\n      \"employee_level\": \"Manager\",\n      \"behavioral_tags\": []\n    }\n  ],\n  \"policy_violations\": [\n    {\n      \"employee\": \"Employee A\",\n      \"amount\": 8000.00,\n      \"category\": \"Travel\",\n      \"date\": \"2024-01-01\",\n      \"violation_type\": \"budget_exceeded\",\n      \"description\": \"Budget exceeded\"\n    },\n    {\n      \"employee\": \"Employee A\",\n      \"amount\": 9000.00,\n      \"category\": \"Travel\",\n      \"date\": \"2024-01-02\",\n      \"violation_type\": \"budget_exceeded\",\n      \"description\": \"Budget exceeded\"\n    },\n    {\n      \"employee\": \"Employee A\",\n      \"amount\": 7500.00,\n      \"category\": \"Travel\",\n      \"date\": \"2024-01-03\",\n      \"violation_type\": \"duplicate_transaction\",\n      \"description\": \"Possible duplicate\"\n    }\n  ],\n  \"flagged_transactions\": {\n    \"high_value_transactions\": [\n      {\"date\": \"2024-01-01\", \"employee\": \"Employee A\", \"amount\": 8000.00, \"category\": \"Travel\", \"reason\": \"High-value\"},\n      {\"date\": \"2024-01-02\", \"employee\": \"Employee A\", \"amount\": 9000.00, \"category\": \"Travel\", \"reason\": \"High-value\"},\n      {\"date\": \"2024-01-03\", \"employee\": \"Employee A\", \"amount\": 7500.00, \"category\": \"Travel\", \"reason\": \"High-value\"},\n      {\"date\": \"2024-01-04\", \"employee\": \"Employee B\", \"amount\": 5000.00, \"category\": \"Software\", \"reason\": \"High-value\"}\n    ],\n    \"potential_duplicates\": [\n      {\"transaction_pair\": [\"A-1\", \"A-2\"], \"similarity_score\": 0.9, \"reason\": \"Same employee, similar amounts\"}\n    ],\n    \"risk_transactions\": [\n      {\"date\": \"2024-01-01\", \"employee\": \"Employee A\", \"amount\": 8000.00, \"risk_score\": 0.95, \"reason\": \"Critical\"},\n      {\"date\": \"2024-01-02\", \"employee\": \"Employee A\", \"amount\": 9000.00, \"risk_score\": 0.92, \"reason\": \"Critical\"}\n    ]\n  },\n  \"transactions\": [\n    {\"date\": \"2024-01-01\", \"amount\": 8000.00, \"employee\": \"Employee A\"},\n    {\"date\": \"2024-01-02\", \"amount\": 9000.00, \"employee\": \"Employee A\"},\n    {\"date\": \"2024-01-03\", \"amount\": 7500.00, \"employee\": \"Employee A\"},\n    {\"date\": \"2024-01-04\", \"amount\": 5000.00, \"employee\": \"Employee B\"},\n    {\"date\": \"2024-01-05\", \"amount\": 3500.00, \"employee\": \"Employee C\"}\n  ]\n}\n"
+            },
+            "url": {
+              "raw": "http://localhost:8000/api/analyze",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8000",
+              "path": ["api", "analyze"]
+            },
+            "description": "High-risk scenario with multiple violations and suspicious patterns."
+          },
+          "response": []
+        },
+        {
+          "name": "Analyze - Low Risk Scenario",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"summary_statistics\": {\n    \"total_expense\": 50000.00,\n    \"category_breakdown\": {\n      \"Office Supplies\": 20000,\n      \"Software\": 20000,\n      \"Meals\": 10000\n    },\n    \"department_distribution\": {\n      \"Operations\": 30000,\n      \"Engineering\": 20000\n    },\n    \"employee_level_distribution\": {\n      \"Junior\": 25000,\n      \"Senior\": 25000\n    },\n    \"spending_level_distribution\": {\n      \"Low\": 30000,\n      \"Medium\": 20000\n    }\n  },\n  \"enriched_features\": [\n    {\n      \"date\": \"2024-01-01\",\n      \"employee\": \"Employee X\",\n      \"amount\": 1000.00,\n      \"category\": \"Office Supplies\",\n      \"vendor\": \"Office Depot\",\n      \"description\": \"Supplies\",\n      \"spending_level\": \"Low\",\n      \"is_high_value\": false,\n      \"risk_flag\": false,\n      \"inferred_department\": \"Operations\",\n      \"employee_level\": \"Junior\",\n      \"behavioral_tags\": []\n    },\n    {\n      \"date\": \"2024-01-02\",\n      \"employee\": \"Employee Y\",\n      \"amount\": 2000.00,\n      \"category\": \"Software\",\n      \"vendor\": \"Vendor Z\",\n      \"description\": \"License\",\n      \"spending_level\": \"Medium\",\n      \"is_high_value\": false,\n      \"risk_flag\": false,\n      \"inferred_department\": \"Engineering\",\n      \"employee_level\": \"Senior\",\n      \"behavioral_tags\": []\n    },\n    {\n      \"date\": \"2024-01-03\",\n      \"employee\": \"Employee Z\",\n      \"amount\": 500.00,\n      \"category\": \"Meals\",\n      \"vendor\": \"Cafe\",\n      \"description\": \"Lunch\",\n      \"spending_level\": \"Low\",\n      \"is_high_value\": false,\n      \"risk_flag\": false,\n      \"inferred_department\": \"Operations\",\n      \"employee_level\": \"Junior\",\n      \"behavioral_tags\": []\n    }\n  ],\n  \"policy_violations\": [],\n  \"flagged_transactions\": {\n    \"high_value_transactions\": [],\n    \"potential_duplicates\": [],\n    \"risk_transactions\": []\n  },\n  \"transactions\": [\n    {\"date\": \"2024-01-01\", \"amount\": 1000.00, \"employee\": \"Employee X\"},\n    {\"date\": \"2024-01-02\", \"amount\": 2000.00, \"employee\": \"Employee Y\"},\n    {\"date\": \"2024-01-03\", \"amount\": 500.00, \"employee\": \"Employee Z\"}\n  ]\n}\n"
+            },
+            "url": {
+              "raw": "http://localhost:8000/api/analyze",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8000",
+              "path": ["api", "analyze"]
+            },
+            "description": "Low-risk scenario with clean, compliant expenses."
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Info",
+      "item": [
+        {
+          "name": "API Health Check",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:8000/",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8000",
+              "path": []\
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:8000"
+    },
+    {
+      "key": "api_endpoint",
+      "value": "/api/analyze"
+    }
+  ]
+}

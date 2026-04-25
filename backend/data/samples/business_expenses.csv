@@ -1,0 +1,21 @@
+date,employee,amount,category,vendor,description
+2024-01-01,john_smith,150.50,travel,Uber,Ride to client meeting
+2024-01-02,sarah_jones,2500.00,travel,United Airlines,Flight to NYC conference
+2024-01-03,mike_brown,45.99,meals,Starbucks,Team coffee meeting
+2024-01-04,john_smith,320.00,software,Adobe,Monthly subscription license
+2024-01-05,sarah_jones,125.00,office,Staples,Office supplies and stationery
+2024-01-06,emily_davis,899.99,equipment,Dell,Dell monitor for workstation
+2024-01-07,mike_brown,75.50,meals,Panera Bread,Client lunch meeting
+2024-01-08,john_smith,1200.00,professional,Coursera,Online certification course
+2024-01-09,sarah_jones,55.00,meals,Local Cafe,Working lunch
+2024-01-10,emily_davis,3500.00,travel,Marriott,Conference hotel stay
+2024-01-11,mike_brown,200.00,marketing,LinkedIn Ads,Sponsored content campaign
+2024-01-12,john_smith,65.00,meals,Pizza Hut,Team dinner
+2024-01-13,sarah_jones,180.00,office,IKEA,Desk accessories and organizing
+2024-01-14,emily_davis,450.00,software,Slack,Team collaboration tool annual
+2024-01-15,mike_brown,95.00,utilities,Internet Provider,Monthly internet bill
+2024-01-16,john_smith,2200.00,travel,Hilton Hotel,Executive suite conference
+2024-01-17,sarah_jones,125.00,meals,Restaurant,Client entertainment dinner
+2024-01-18,emily_davis,180.00,equipment,Logitech,Wireless keyboard and mouse
+2024-01-19,mike_brown,350.00,marketing,Event Brite,Conference registration fee
+2024-01-20,john_smith,55.00,office,Amazon,Miscellaneous office items

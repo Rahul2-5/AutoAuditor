@@ -1,0 +1,560 @@
+{
+  "status": "success",
+  "message": "Audit completed successfully",
+  "report": {
+    "processing": {
+      "timestamp": "2026-04-24T19:11:14.764375",
+      "total_records": 19,
+      "preparation": {
+        "status": "success",
+        "summary": {
+          "total_records": 19,
+          "total_expense": 36300.0,
+          "average_expense": 1910.5263157894738,
+          "median_expense": 1500.0,
+          "max_expense": 5200.0,
+          "min_expense": 450.0,
+          "std_deviation": 1339.732451251246,
+          "category_breakdown": {
+            "meals": {
+              "total": 3900.0,
+              "count": 5,
+              "average": 780.0,
+              "percentage": 10.743801652892563
+            },
+            "office supplies": {
+              "total": 1650.0,
+              "count": 2,
+              "average": 825.0,
+              "percentage": 4.545454545454546
+            },
+            "software": {
+              "total": 6150.0,
+              "count": 2,
+              "average": 3075.0,
+              "percentage": 16.94214876033058
+            },
+            "travel": {
+              "total": 24600.0,
+              "count": 10,
+              "average": 2460.0,
+              "percentage": 67.76859504132231
+            }
+          },
+          "department_breakdown": {
+            "IT": {
+              "total": 6150.0,
+              "count": 2,
+              "average": 3075.0,
+              "percentage": 16.94214876033058
+            },
+            "Operations": {
+              "total": 24600.0,
+              "count": 10,
+              "average": 2460.0,
+              "percentage": 67.76859504132231
+            },
+            "unknown": {
+              "total": 5550.0,
+              "count": 7,
+              "average": 792.86,
+              "percentage": 15.289256198347106
+            }
+          },
+          "employee_level_distribution": {
+            "Junior": {
+              "total": 3800.0,
+              "count": 6,
+              "average": 633.33,
+              "percentage": 10.46831955922865
+            },
+            "Mid-level": {
+              "total": 13900.0,
+              "count": 8,
+              "average": 1737.5,
+              "percentage": 38.29201101928375
+            },
+            "Senior": {
+              "total": 18600.0,
+              "count": 5,
+              "average": 3720.0,
+              "percentage": 51.2396694214876
+            }
+          },
+          "spending_level_distribution": {
+            "high": {
+              "total": 21400.0,
+              "count": 6,
+              "average": 3566.67,
+              "percentage": 58.95316804407713
+            },
+            "low": {
+              "total": 3800.0,
+              "count": 6,
+              "average": 633.33,
+              "percentage": 10.46831955922865
+            },
+            "medium": {
+              "total": 11100.0,
+              "count": 7,
+              "average": 1585.71,
+              "percentage": 30.57851239669421
+            }
+          },
+          "risk_distribution": {
+            "low": {
+              "total": 34800.0,
+              "count": 18,
+              "average": 1933.33,
+              "percentage": 95.86776859504133
+            },
+            "medium": {
+              "total": 1500.0,
+              "count": 1,
+              "average": 1500.0,
+              "percentage": 4.132231404958678
+            }
+          },
+          "unique_employees": 5,
+          "unique_vendors": 12,
+          "unique_categories": 4,
+          "date_range": {
+            "start": "2024-01-05",
+            "end": "2024-01-23",
+            "days": 18
+          },
+          "cleaning_statistics": {
+            "duplicates_removed": 0,
+            "rows_with_nulls_dropped": 0,
+            "invalid_dates": 0,
+            "invalid_amounts": 1,
+            "invalid_employees": 0,
+            "warnings": []
+          },
+          "enrichment_statistics": {
+            "high_value_transactions": 2,
+            "risk_transactions": 1,
+            "frequent_spenders": 1,
+            "policy_violation_candidates": 0
+          }
+        },
+        "flags": {
+          "high_value_transactions": [
+            {
+              "employee": "mike johnson",
+              "amount": 5200.0,
+              "category": "software",
+              "vendor": "adobe inc",
+              "date": "2024-01-08",
+              "level": "Senior",
+              "risk": "low"
+            },
+            {
+              "employee": "jane doe",
+              "amount": 3800.0,
+              "category": "travel",
+              "vendor": "united airlines",
+              "date": "2024-01-17",
+              "level": "Senior",
+              "risk": "low"
+            }
+          ],
+          "risk_transactions": [
+            {
+              "employee": "sarah wilson",
+              "amount": 1500.0,
+              "vendor": "restaurant z",
+              "description": "client entertainment",
+              "risk_level": "medium",
+              "keywords": "entertainment",
+              "date": "2024-01-14"
+            }
+          ],
+          "policy_violation_candidates": [],
+          "potential_duplicates": [],
+          "frequent_spenders": [
+            {
+              "employee": "john smith",
+              "total_expenses": 6550.0,
+              "transaction_count": 5,
+              "average_expense": 1310.0,
+              "primary_category": "travel"
+            }
+          ]
+        }
+      }
+    },
+    "audit_analysis": {
+      "risk_assessment": {
+        "overall_risk": "medium",
+        "confidence_score": 0.4,
+        "key_risks": [
+          "Moderate violation frequency: 10.5% of transactions",
+          "High spending concentration in travel: 67.8%"
+        ]
+      },
+      "violation_analysis": {
+        "total_violations": 2,
+        "critical": [
+          {
+            "employee": "mike johnson",
+            "amount": 5200.0,
+            "category": "software",
+            "date": "2024-01-08",
+            "violation_type": "budget_exceeded",
+            "description": "Amount $5200.00 exceeds budget threshold of $5000"
+          }
+        ],
+        "moderate": [],
+        "minor": [
+          {
+            "employee": "john smith",
+            "amount": 6550.0,
+            "category": "Multiple",
+            "date": "2024-01-05",
+            "violation_type": "frequency_violation",
+            "description": "Employee has 5 transactions in period (threshold: 4)"
+          }
+        ],
+        "repeat_offenders": []
+      },
+      "anomalies": [
+        {
+          "type": "category_dominance",
+          "category": "travel",
+          "concentration": 0.68,
+          "amount": 24600.0,
+          "description": "Category 'travel' represents 67.8% of total spending"
+        },
+        {
+          "type": "spending_spike",
+          "threshold": 4589.99,
+          "spike_count": 1,
+          "description": "Detected 1 transactions exceeding normal spending patterns"
+        }
+      ],
+      "fraud_signals": [
+        {
+          "type": "high_value_violation",
+          "severity": "critical",
+          "count": 1,
+          "description": "1 high-value transactions with policy violations detected",
+          "transactions": [
+            {
+              "employee": "mike johnson",
+              "amount": 5200.0,
+              "category": "software",
+              "date": "2024-01-08",
+              "violation_type": "budget_exceeded",
+              "description": "Amount $5200.00 exceeds budget threshold of $5000"
+            }
+          ]
+        }
+      ],
+      "financial_insights": [
+        {
+          "type": "spending_distribution",
+          "description": "Top spending categories: travel ($24,600.00)",
+          "details": [
+            [
+              "travel",
+              24600.0
+            ],
+            [
+              "software",
+              6150.0
+            ],
+            [
+              "meals",
+              3900.0
+            ],
+            [
+              "office supplies",
+              1650.0
+            ]
+          ]
+        },
+        {
+          "type": "department_spending",
+          "description": "Highest spending department: Sales ($12,350.00)",
+          "details": [
+            [
+              "Sales",
+              12350.0
+            ],
+            [
+              "Engineering",
+              10650.0
+            ],
+            [
+              "Marketing",
+              10150.0
+            ],
+            [
+              "Operations",
+              3150.0
+            ]
+          ]
+        },
+        {
+          "type": "violation_cost_impact",
+          "description": "Violations account for $11,750.00 (32.4%) of total spending",
+          "amount": 11750.0,
+          "percentage": 32.37
+        },
+        {
+          "type": "employee_level_distribution",
+          "description": "Spending by employee level",
+          "details": {
+            "Mid-level": 13900.0,
+            "Senior": 18600.0,
+            "Junior": 3800.0
+          }
+        },
+        {
+          "type": "high_value_transactions",
+          "description": "4 high-value transactions detected",
+          "count": 4,
+          "recommendation": "Review high-value transactions for legitimacy"
+        }
+      ],
+      "recommendations": [
+        {
+          "title": "Resolve Critical Policy Violations",
+          "description": "Found 1 critical violations. Immediately review and take corrective action with involved employees.",
+          "priority": "high"
+        },
+        {
+          "title": "Investigate Detected Anomalies",
+          "description": "Detected 2 anomalies in spending patterns. Conduct detailed investigation before processing reimbursements.",
+          "priority": "high"
+        },
+        {
+          "title": "Implement Category-Specific Controls",
+          "description": "Establish spending caps and approval requirements for high-risk categories.",
+          "priority": "medium"
+        },
+        {
+          "title": "Establish Regular Audit Cycles",
+          "description": "Schedule weekly audits for high-risk categories and monthly comprehensive reviews of all expenses.",
+          "priority": "low"
+        }
+      ],
+      "cost_optimization_tips": [
+        {
+          "tip": "Eliminate policy violation costs",
+          "impact": "high",
+          "description": "Preventing violations can save $11,750.00 annually"
+        },
+        {
+          "tip": "Optimize 'travel' category spending",
+          "impact": "high",
+          "description": "This category represents 68% of expenses. Review for efficiency gains."
+        },
+        {
+          "tip": "Implement role-based spending policies",
+          "impact": "medium",
+          "description": "Tailor spending limits and approval requirements by employee level for optimal efficiency"
+        },
+        {
+          "tip": "Automate expense processing and validation",
+          "impact": "medium",
+          "description": "Reduce manual review time and improve compliance with intelligent automation"
+        }
+      ],
+      "visualization": {
+        "category_distribution": [
+          {
+            "name": "travel",
+            "value": 24600.0
+          },
+          {
+            "name": "software",
+            "value": 6150.0
+          },
+          {
+            "name": "meals",
+            "value": 3900.0
+          },
+          {
+            "name": "office supplies",
+            "value": 1650.0
+          }
+        ],
+        "department_distribution": [
+          {
+            "name": "Sales",
+            "value": 12350.0
+          },
+          {
+            "name": "Engineering",
+            "value": 10650.0
+          },
+          {
+            "name": "Marketing",
+            "value": 10150.0
+          },
+          {
+            "name": "Operations",
+            "value": 3150.0
+          }
+        ],
+        "employee_level_distribution": [
+          {
+            "name": "Senior",
+            "value": 18600.0
+          },
+          {
+            "name": "Mid-level",
+            "value": 13900.0
+          },
+          {
+            "name": "Junior",
+            "value": 3800.0
+          }
+        ],
+        "spending_trend": [
+          {
+            "date": "2024-01-05",
+            "amount": 1200.0
+          },
+          {
+            "date": "2024-01-06",
+            "amount": 3500.0
+          },
+          {
+            "date": "2024-01-07",
+            "amount": 450.0
+          },
+          {
+            "date": "2024-01-08",
+            "amount": 5200.0
+          },
+          {
+            "date": "2024-01-09",
+            "amount": 2200.0
+          },
+          {
+            "date": "2024-01-10",
+            "amount": 800.0
+          },
+          {
+            "date": "2024-01-11",
+            "amount": 3200.0
+          },
+          {
+            "date": "2024-01-12",
+            "amount": 450.0
+          },
+          {
+            "date": "2024-01-13",
+            "amount": 2800.0
+          },
+          {
+            "date": "2024-01-14",
+            "amount": 1500.0
+          },
+          {
+            "date": "2024-01-15",
+            "amount": 1800.0
+          },
+          {
+            "date": "2024-01-16",
+            "amount": 600.0
+          },
+          {
+            "date": "2024-01-17",
+            "amount": 3800.0
+          },
+          {
+            "date": "2024-01-18",
+            "amount": 950.0
+          },
+          {
+            "date": "2024-01-19",
+            "amount": 2100.0
+          },
+          {
+            "date": "2024-01-20",
+            "amount": 550.0
+          },
+          {
+            "date": "2024-01-21",
+            "amount": 1100.0
+          },
+          {
+            "date": "2024-01-22",
+            "amount": 2900.0
+          },
+          {
+            "date": "2024-01-23",
+            "amount": 1200.0
+          }
+        ],
+        "top_spenders": [
+          {
+            "employee": "jane doe",
+            "amount": 10650.0
+          },
+          {
+            "employee": "mike johnson",
+            "amount": 10150.0
+          },
+          {
+            "employee": "john smith",
+            "amount": 6550.0
+          },
+          {
+            "employee": "sarah wilson",
+            "amount": 5800.0
+          },
+          {
+            "employee": "tom brown",
+            "amount": 3150.0
+          }
+        ],
+        "violation_breakdown": [
+          {
+            "type": "critical",
+            "count": 1
+          },
+          {
+            "type": "moderate",
+            "count": 0
+          },
+          {
+            "type": "minor",
+            "count": 1
+          }
+        ]
+      },
+      "summary_statistics": {
+        "total_expense": 36300.0,
+        "category_breakdown": {
+          "travel": 24600.0,
+          "meals": 3900.0,
+          "software": 6150.0,
+          "office supplies": 1650.0
+        },
+        "department_distribution": {
+          "Sales": 12350.0,
+          "Engineering": 10650.0,
+          "Marketing": 10150.0,
+          "Operations": 3150.0
+        },
+        "employee_level_distribution": {
+          "Mid-level": 13900.0,
+          "Senior": 18600.0,
+          "Junior": 3800.0
+        },
+        "spending_level_distribution": {
+          "Medium": 16800.0,
+          "High": 15700.0,
+          "Low": 3800.0
+        }
+      },
+      "final_audit_summary": "AUDIT REPORT SUMMARY: Overall Risk Assessment is MEDIUM (Confidence: 40%). Identified 2 total policy violations, including 1 critical cases. Found 0 repeat offenders requiring immediate attention. Detected 1 potential fraud signals warranting investigation. Provided 4 actionable recommendations prioritized by severity. Immediate action required on critical violations before expense approval."
+    },
+    "executive_summary": "COMPREHENSIVE AUDIT REPORT - 2026-04-24 19:11:14. Data preparation completed successfully with 18 records processed. Overall risk assessment: MEDIUM (confidence: 40%). Identified 2 policy violations (1 critical). Detected 1 fraud signals requiring investigation. Generated 4 actionable recommendations. Visualization data prepared for dashboard integration. Ready for executive review and action."
+  }
+}
